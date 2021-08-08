@@ -1,9 +1,15 @@
-nums = [0, 4, 3, 0]
-target = 0
+nums = [2,1,9,4,4,56,90,3]
+target = 8
 
 # Commented out debugging process instead of deleting. Showed myself stepping through the list, which if statement
 # I was in, and checking if the counter was incrementing which was the issue originally with this run. [0,3] should
 # be returned.
+
+# 8/5/21 - Initial commit
+# 8/7/21 - Solved! Probably can improve but for now the following works. The issue with the initial commit was that
+# with the idea of setting 'goal' variables it was allowing incorrect answers since I was not specifically checking for
+# a sum (how stupid to forget the prompt!) Added in 'total = num + goal' and conditional 'total == target' to confirm
+# if the sum of the two numbers would actually work and not give false positives.
 
 def twosum(nums, target):
     counter = 0
@@ -14,7 +20,8 @@ def twosum(nums, target):
         goal_2 = num - target
         if goal_1 in nums:
             # print("In goal 1!")
-            if nums.index(goal_1) != index1:
+            total = num + goal_1
+            if nums.index(goal_1) != index1 and total == target:
                 index2 = nums.index(goal_1)
                 if goal_1 == num:
                     return index2, index1
@@ -22,10 +29,11 @@ def twosum(nums, target):
                     return index1, index2
             else:
                 counter += 1
-                # print(counter)
+                print(counter)
         elif goal_2 in nums:
             # print("In goal 2!")
-            if nums.index(goal_2) != index1:
+            total = num + goal_2
+            if nums.index(goal_2) != index1 and total == target:
                 index2 = nums.index(goal_2)
                 if goal_2 == num:
                     return index2, index1
@@ -34,6 +42,7 @@ def twosum(nums, target):
             else:
                 counter += 1
         else:
+            # print("Goal not in nums")
             counter += 1
 
 print(twosum(nums, target))

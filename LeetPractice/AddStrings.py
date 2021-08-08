@@ -7,11 +7,13 @@ num1 = "11"
 num2 = "123"
 
 def addStrings(num1, num2):
+    # Attempt 1, but we can keep narrowing it down!
     # temp1 = int(num1)
     # temp2 = int(num2)
     # temp3 = temp1 +temp2
     # num3 = str(temp3)
 
+    # Attempt 2
     # temp1 = int(num1)
     # temp2 = int(num2)
     #
@@ -21,3 +23,5 @@ def addStrings(num1, num2):
     return str(temp)
 
 print(addStrings(num1, num2))
+
+# A nice easy welcome to LeetCode type of problem! Variable manipultation and type casting make for an easy warmup exercise!

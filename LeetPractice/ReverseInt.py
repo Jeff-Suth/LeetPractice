@@ -4,7 +4,7 @@
 # Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
 # 123, -123, 901000, 1534236469
 
-num =1534236469
+num = 1534236469
 
 
 def reverse(x):
@@ -34,3 +34,4 @@ print(reverse(num))
 # Type casting and slicing! Another easy problem to help boost your confidence! You're smarter than you realize :)
 # https://www.w3schools.com/python/python_howto_reverse_string.asp
 # delftstack.com/howto/python/remove-substring-from-a-string-python/
+# https://www.tutorialspoint.com/python/string_replace.htm
